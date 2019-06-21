@@ -1,0 +1,59 @@
+{
+    "name": "component-boilerplate",
+    "version": "1.0.0",
+    "description": "A Boilerplate for building component libraries",
+    "main": "lib/index.js",
+    "scripts": {
+        "build": "node bundle.js && babel src -d lib",
+        "test": "jest --watchAll",
+        "test-coverage": "jest --coverage --watchAll",
+        "test-ci": "CI=true jest --coverage",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook",
+        "prepublish": "yarn run test-coverage && yarn run build"
+    },
+    "author": "Simon Sturgess - @dahliacreative",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.5",
+        "@babel/plugin-proposal-export-default-from": "^7.2.0",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/preset-react": "^7.0.0",
+        "@storybook/addon-actions": "^5.1.9",
+        "@storybook/addon-links": "^5.1.9",
+        "@storybook/addons": "^5.1.9",
+        "@storybook/react": "^5.1.9",
+        "babel-loader": "^8.0.6",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "jest": "^24.8.0",
+        "react": "^16.8.6"
+    },
+    "peerDependencies": {
+        "react": "^16.8.6"
+    },
+    "dependencies": {},
+    "jest": {
+        "collectCoverageFrom": [
+            "!src/**/stories.{js,ts}",
+            "src/**/*.{js,ts,jsx,ts}"
+        ],
+        "coverageThreshold": {
+            "global": {
+                "branches": 100,
+                "functions": 100,
+                "lines": 100,
+                "statements": 100
+            }
+        },
+        "moduleDirectories": [
+            "src",
+            "node_modules"
+        ],
+        "resetMocks": true,
+        "setupFiles": [
+            "./tests.config.js"
+        ]
+    }
+}
