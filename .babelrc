@@ -4,6 +4,5 @@
         "@babel/preset-react",
         "@emotion/babel-preset-css-prop"
     ],
-    "plugins": ["@babel/plugin-proposal-export-default-from"],
-    "ignore": ["**/spec.js", "**/stories.js", "**/spec.ts", "**/stories.ts"]
+    "plugins": ["@babel/plugin-proposal-export-default-from", "emotion"]
 }

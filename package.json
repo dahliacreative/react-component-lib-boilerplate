@@ -4,7 +4,7 @@
     "description": "A Boilerplate for building component libraries",
     "main": "lib/index.js",
     "scripts": {
-        "build": "node bundle.js && babel src -d lib",
+        "build": "node bundle.js && babel src -d lib --ignore **/spec.js,**/stories.js,**/spec.ts,**/stories.ts",
         "test": "jest --watchAll",
         "test-coverage": "jest --coverage --watchAll",
         "test-ci": "CI=true jest --coverage",
@@ -27,6 +27,7 @@
         "@storybook/addons": "^5.1.9",
         "@storybook/react": "^5.1.9",
         "babel-loader": "^8.0.6",
+        "babel-plugin-emotion": "^10.0.13",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
         "jest": "^24.8.0",
